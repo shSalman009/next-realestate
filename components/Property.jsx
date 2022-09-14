@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { FaBath, FaBed } from "react-icons/fa";
 import { GoVerified } from "react-icons/go";
@@ -17,8 +18,14 @@ export default function Property({ property }) {
     externalID,
   } = property;
 
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/property/${externalID}`);
+  };
+
   return (
-    <div className="p-4 md:w-1/3">
+    <div className="p-4 md:w-1/3 cursor-pointer" onClick={handleClick}>
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <img
           className="lg:h-48 md:h-36 w-full object-cover object-center"
@@ -46,7 +53,7 @@ export default function Property({ property }) {
               {rooms} {<FaBed />}
             </span>
             <span className="text-gray-400 mr-3 inline-flex items-center gap-2  text-sm pr-3 py-1 border-r-2 border-gray-200">
-              1 {<FaBath />}
+              {baths} {<FaBath />}
             </span>
             <span className="text-gray-400 inline-flex items-center  text-sm">
               {area.toFixed(2)} Square Feet
