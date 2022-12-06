@@ -9,7 +9,7 @@ export default function Navbar() {
     <nav className="fixed w-full z-20 top-0 left-0 bg-slate-900 text-white border-gray-200 px-2 sm:px-4 py-2.5 ">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <div className="flex items-center">
-          <img src="favicon.ico" className="mr-3 h-6 sm:h-9" />
+          <img src="Real Estate Company.png" className="mr-3 h-6 sm:h-9" />
           <Link href="/">
             <span className="self-center text-xl font-semibold whitespace-nowrap ">
               Company
