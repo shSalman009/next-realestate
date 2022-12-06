@@ -9,8 +9,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { baseUrl, FetchData } from "../../utilities/FetchData";
 
 export default function property({ data }) {
-  console.log(data);
-
   const {
     price,
     rentFrequency,
@@ -30,7 +28,7 @@ export default function property({ data }) {
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto flex flex-col">
-        <div className="lg:w-4/6 mx-auto">
+        <div className="lg:w-4/6 w-full mx-auto">
           <div className="rounded-md  overflow-hidden">
             <Swiper
               spaceBetween={30}
@@ -95,7 +93,7 @@ export default function property({ data }) {
               {amenities.length && (
                 <span className="text-lg font-bold text-black">Facilites:</span>
               )}
-              <div flexWrap="wrap">
+              <div className="flex-wrap">
                 {amenities?.map((item) =>
                   item?.amenities?.map((amenity) => (
                     <span
